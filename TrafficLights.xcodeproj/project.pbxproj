@@ -14,6 +14,7 @@
 		014887181D48C4BD00C21D6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 014887161D48C4BD00C21D6E /* LaunchScreen.storyboard */; };
 		014887231D48C4BD00C21D6E /* TrafficLightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014887221D48C4BD00C21D6E /* TrafficLightsTests.swift */; };
 		0148872E1D48C4BD00C21D6E /* TrafficLightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148872D1D48C4BD00C21D6E /* TrafficLightsUITests.swift */; };
+		0148873C1D48D0C900C21D6E /* TrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148873B1D48D0C900C21D6E /* TrafficController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		014887291D48C4BD00C21D6E /* TrafficLightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrafficLightsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0148872D1D48C4BD00C21D6E /* TrafficLightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightsUITests.swift; sourceTree = "<group>"; };
 		0148872F1D48C4BD00C21D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0148873B1D48D0C900C21D6E /* TrafficController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				014887141D48C4BD00C21D6E /* Assets.xcassets */,
 				014887161D48C4BD00C21D6E /* LaunchScreen.storyboard */,
 				014887191D48C4BD00C21D6E /* Info.plist */,
+				0148873B1D48D0C900C21D6E /* TrafficController.swift */,
 			);
 			path = TrafficLights;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014887101D48C4BD00C21D6E /* ViewController.swift in Sources */,
+				0148873C1D48D0C900C21D6E /* TrafficController.swift in Sources */,
 				0148870E1D48C4BD00C21D6E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
