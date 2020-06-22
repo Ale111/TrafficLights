@@ -4,7 +4,8 @@
 //
 //  Created by Nick Dawson on 27/07/2016.
 //  Copyright © 2016 Nick Dawson. All rights reserved.
-//
+//  Updated to Swift 5.0 Xcode 11 iOS 13.0 by Ale111 22/06/2020
+//  https://github.com/Ale111//
 
 import UIKit
 
