@@ -25,7 +25,9 @@ class TrafficController: NSObject {
     let controllerDelegate: TrafficControllerDelegate
     var running = false
     var trafficLightState = TrafficLightState.AllRed
-    var timer: NSTimer?
+    var timer: Timer?
+    let longDelay = 10
+    let shrtDelay = 5
     
     init(delegate: TrafficControllerDelegate) {
         controllerDelegate = delegate
@@ -51,43 +53,43 @@ class TrafficController: NSObject {
         timer?.invalidate()
         
         // Reset to initial state
-        updateState(.AllRed)
+        updateState(state: .AllRed)
     }
     
-    func changeLights() {
+    @objc func changeLights() {
         
-        var delay: NSTimeInterval
+        var delay: TimeInterval
         
         switch trafficLightState {
         case .AllRed:
-            updateState(.NorthSouth)
-            delay = 25
+            updateState(state: .NorthSouth)
+            delay = TimeInterval(longDelay)
             
         case .NorthSouth:
-            updateState(.NorthSouthAmber)
-            delay = 5
+            updateState(state: .NorthSouthAmber)
+            delay = TimeInterval(shrtDelay)
             
         case .NorthSouthAmber:
-            updateState(.EastWest)
-            delay = 25
+            updateState(state: .EastWest)
+            delay = TimeInterval(longDelay)
             
         case .EastWest:
-            updateState(.EastWestAmber)
-            delay = 5
+            updateState(state: .EastWestAmber)
+            delay = TimeInterval(shrtDelay)
             
         case .EastWestAmber:
-            updateState(.NorthSouth)
-            delay = 25
+            updateState(state: .NorthSouth)
+            delay = TimeInterval(longDelay)
         }
         
         // Schedule timer so we're running more operations than we need
-        timer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self, selector: #selector(TrafficController.changeLights), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(TrafficController.changeLights), userInfo: nil, repeats: false)
     }
     
     func updateState(state: TrafficLightState) {
         trafficLightState = state
         
-        controllerDelegate.updateState(self, state: state)
+        controllerDelegate.updateState(controller: self, state: state)
     }
 
 }

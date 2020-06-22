@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, TrafficControllerDelegate {
     
-    @IBOutlet weak var startStopButton: UIButton?
-    @IBOutlet weak var intersectionView: UIView?
+    
     
     @IBOutlet weak var northLights: UIImageView?
     @IBOutlet weak var southLights: UIImageView?
@@ -37,15 +36,16 @@ class ViewController: UIViewController, TrafficControllerDelegate {
         if controller!.running {
             controller!.stop()
             
-            sender.setTitle("Start", forState: .Normal)
+            sender.setTitle("Start", for: .normal)
         } else {
             self.controller!.start()
             
-            sender.setTitle("Stop", forState: .Normal)
+            sender.setTitle("Stop", for: .normal)
         }
     }
     
     func updateState(controller: TrafficController, state: TrafficLightState) {
+        print("Update state... State: \(state)")
         switch state {
             case .NorthSouth:
                 northLights?.image = UIImage(named: "green")

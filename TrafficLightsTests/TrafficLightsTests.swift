@@ -35,11 +35,11 @@ class TrafficLightsTests: XCTestCase, TrafficControllerDelegate {
     func testChangeLights() {
         let controller = TrafficController(delegate: self)
         
-        changeFromState(.AllRed, controller: controller)
-        changeFromState(.EastWest, controller: controller)
-        changeFromState(.EastWestAmber, controller: controller)
-        changeFromState(.NorthSouth, controller: controller)
-        changeFromState(.NorthSouthAmber, controller: controller)
+        changeFromState(state: .AllRed, controller: controller)
+        changeFromState(state: .EastWest, controller: controller)
+        changeFromState(state: .EastWestAmber, controller: controller)
+        changeFromState(state: .NorthSouth, controller: controller)
+        changeFromState(state: .NorthSouthAmber, controller: controller)
     }
     
     func testLightsSequence() {
@@ -88,18 +88,18 @@ class TrafficLightsTests: XCTestCase, TrafficControllerDelegate {
         controller.stop()
         
         XCTAssert(controller.running == false, "Controller didn't stop. Run Forrest Run")
-        XCTAssert(controller.timer?.valid == false, "Timer didn't get invalidate")
+        XCTAssert(controller.timer?.isValid == false, "Timer didn't get invalidate")
     }
     
     func testTiming() {
         let controller = TrafficController(delegate: self)
         
-        timingExpectation = expectationWithDescription("Timing expectation")
+        timingExpectation = expectation(description: "Timing expectation")
         timingTargetState = .NorthSouthAmber
         
         controller.start()
         
-        waitForExpectationsWithTimeout(26.0) { error in
+        waitForExpectations(timeout: 16.0) { error in
             
         }
     }
